@@ -1,4 +1,4 @@
-# ImagePickerSheetController
+# ImagePickerSheetController.
 
 ## About
 ImagePickerSheetController is a component that replicates the custom photo action sheet in iMessage. It's very similar to UIActionController which makes its usage simple and concise.
