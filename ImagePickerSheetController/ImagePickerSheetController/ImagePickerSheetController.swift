@@ -227,15 +227,16 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     }
     
     public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let asset = assets[indexPath.row]
+        let asset = assets[indexPath.section]
         let size = sizeForAsset(asset)
         
         // Call delegate
         requestImageForAsset(asset, size: size, deliveryMode: .HighQualityFormat ) { (image) -> Void in
-            
+
+            self.delegate?.libraryImageDidSelect(image!)
+
             self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             
-            self.delegate?.libraryImageDidSelect(image!)
             
         }
         
