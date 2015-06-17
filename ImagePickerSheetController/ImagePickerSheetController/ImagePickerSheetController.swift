@@ -161,7 +161,7 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
         
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         
-        actions[indexPath.row].handle(numberOfPhotos: selectedPhotoIndices.count)
+        actions[indexPath.row].handle(numberOfImages: selectedPhotoIndices.count)
     }
     
     // MARK: - UICollectionViewDataSource
@@ -383,7 +383,7 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
         
         let cancelActions = actions.filter { $0.style == ImageActionStyle.Cancel }
         if let cancelAction = cancelActions.first {
-            cancelAction.handle(numberOfPhotos: selectedPhotoIndices.count)
+            cancelAction.handle(numberOfImages: selectedPhotoIndices.count)
         }
     }
     
